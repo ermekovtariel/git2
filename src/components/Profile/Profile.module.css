@@ -1,0 +1,46 @@
+.content{
+    background-color: rgba(81, 78, 241, 0.774);
+  }
+  
+  
+  .content{
+    grid-area: c;
+  }
+  
+  .Zz{
+    margin: 0 auto;
+    display: grid;
+    width: 1200px;
+  
+  grid-template-areas: 
+  "a d";  
+        grid-template-columns: 1fr 7fr;
+          
+  }
+  
+  .ava{
+    width: 90px;
+
+    border-top-left-radius: 40px;
+    border-top-right-radius: 37px;
+    border-bottom-right-radius: 37px;
+    border-bottom-left-radius: 40px;
+  }
+  
+  .discription{
+
+  }
+  
+  
+  .Ava{
+    grid-area: a;
+  }
+
+  .discription{
+    grid-area: d;
+  }
+  
+  
+  .img{
+border-radius: 15%;
+  }

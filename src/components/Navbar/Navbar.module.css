@@ -1,0 +1,21 @@
+.Navbar a{
+  text-decoration: none;
+
+}
+
+.Navbar{
+  grid-area: n;
+}
+
+.Navbar{
+  background-color: rgb(236, 192, 126);
+  padding: 20px;
+ 
+}
+.item{
+  text-align: initial;
+  color: aliceblue;
+}
+.activeLink{
+  color: rgb(0, 0, 0);
+}

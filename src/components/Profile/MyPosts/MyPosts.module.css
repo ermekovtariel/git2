@@ -1,0 +1,20 @@
+
+  div textarea{
+
+    width: 100x;
+    height: 30px;
+  
+
+
+  }
+  div button{
+    width: 40px;
+    height: 20px;
+    text-align: center;
+  }
+  .allPosts{
+    padding: 10px;
+  }
+  .buttonPost{
+    padding-left: 130px;
+  }
