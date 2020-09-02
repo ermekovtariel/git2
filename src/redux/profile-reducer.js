@@ -12,20 +12,29 @@ let initialState = {
 };
 
 
-const profileReduser = (state = initialState, action) => {
+const profileReducer = (state = initialState, action) => {
     switch (action.type){
-        case ADD_POST:
+        case ADD_POST:{
             let newPost = {
                 id: 5,
                 message: state.newPostText,
                 like: 0
             };
-            state.posts.push(newPost);
-            state.newPostText = '';
-            return state;
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+
+           return {...state,
+                posts: [...state.posts, newPost/* newPost=вместо пуша успользуем такой синтаксис*/],
+                newPostText : ''
+            };
+            }
+
+        case UPDATE_NEW_POST_TEXT:{
+            return {
+                ...state,
+                newPostText : action.newText
+            }
+            
+          
+        }
         default:
             return state;
     }
@@ -37,4 +46,5 @@ export const addPostActionCreator = () => ({ type: ADD_POST })
 export const updateNewPostTextActionCreator = (text) =>
     ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
-export default profileReduser;
+export default profileReducer;
+

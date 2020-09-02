@@ -1,6 +1,6 @@
-import profileReduser from './profile-reduser';
-import dialogsReduser from './dialogs-reduser';
-import sidebarReduser from './sidebar-reduser';
+import profileReducer from './profile-reducer';
+import dialogsReducer from './dialogs-reducer';
+import sidebarReducer from './sidebar-reducer';
 
 
 let store = {
@@ -49,9 +49,9 @@ subscribe(obsever) {
 },
 dispatch(action) {// это будет например ={type:'ADD-POST'}оно всегда будет текстовым
  
-  this._state.profilePage=profileReduser(this._state.profilePage, action)
-  this._state.dialogsPage = dialogsReduser(this._state.dialogsPage, action)
-  this._state.sidebar = sidebarReduser(this._state.sidebar, action)
+  this._state.profilePage=profileReducer(this._state.profilePage, action)
+  this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+  this._state.sidebar = sidebarReducer(this._state.sidebar, action)
 
   this._callSubscriber(this._state);
 
