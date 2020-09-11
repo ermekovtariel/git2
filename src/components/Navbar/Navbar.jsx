@@ -12,6 +12,9 @@ const Navbar = () => {
         <NavLink className={`${z.item} ${z.active}`} to='/Dialogs' activeClassName={z.activeLink}>Massages</NavLink>
       </div>
       <div>
+        <NavLink className={`${z.item} ${z.active}`} to='/Users' activeClassName={z.activeLink}>Users</NavLink>
+      </div>
+      <div>
         <NavLink className={z.item} to='/News' activeClassName={z.activeLink}>News</NavLink>
       </div>
       <div>

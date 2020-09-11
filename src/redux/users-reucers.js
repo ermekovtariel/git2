@@ -1,19 +1,42 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+import React from 'react';
+import { useCallback } from "react";
+
+const FOLLOW = 'FOLLOW';
+const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'SET_USERS';
 
 let initialState = {
-    users: [
-        { id: '1', fullName: 'Bratik', like: 9 },
-        { id: '2', message: 'awsome!', like: 1 },
-        { id: '1', message: 'bla-bla', like: 7 },
-        { id: '2', message: 'cool!', like: 5 }
-    ],
- };
+    users: [],
+};
 
 
 const usersReducer = (state = initialState, action) => {
-    switch (action.type){
-   
+    switch (action.type) {
+        case FOLLOW:
+            return {
+                ...state,
+                //users: [...state.users], это одно и тоже что и  users: state.users.map()
+                users: state.users.map(u => {
+                    if (u.id === action.userId) {
+                        return { ...u, followed: true }
+                    }
+                    return u;
+                })
+            }
+        case UNFOLLOW:
+            return {
+                ...state,
+                //users: [...state.users], это одно и тоже что и  users: state.users.map()
+                users: state.users.map(u => {
+                    if (u.id === action.userId) {
+                        return { ...u, followed: false }
+                    }
+                    return u;
+                })
+            }
+        case SET_USERS: {
+            return { ...state, users: [...state.users, ...action.users] }
+        }
         default:
             return state;
     }
@@ -21,9 +44,10 @@ const usersReducer = (state = initialState, action) => {
 
 
 
-export const addPostActionCreator = () => ({ type: ADD_POST })
-export const updateNewPostTextActionCreator = (text) =>
-    ({ type: UPDATE_NEW_POST_TEXT, newText: text })
+export const followAC = (userId) => ({ type: FOLLOW, userId })
+export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId })
+export const setUsersAC = (users) => ({ type: SET_USERS, users })
+
 
 export default usersReducer;
 

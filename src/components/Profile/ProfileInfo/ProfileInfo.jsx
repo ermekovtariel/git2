@@ -6,7 +6,7 @@ const ProfileInfo = () => {
             <img src='https://s3.amazonaws.com/images.seroundtable.com/google-css-images-1515761601.jpg'></img>
         </div>
         <div className={z.Zz}>
-            <img className={z.ava} src="https://static.sessun.com//icache/size/1860c2325/themes/sessun/images/catalog/product/Wxl-_Ava_june_mood-047.jpg"></img>  
+            <img className={z.ava} src="https://sun9-64.userapi.com/impf/c845122/v845122399/15c0ed/PLj6dQarQ6E.jpg?size=400x0&quality=90&sign=c12200a9d964685acd2a2e3de9481d40&c_uniq_tag=fsppVFVU5ywzZmUw2Jl-OzaR2fDt0KB2pKVm7VJbRWE&ava=1"></img>  
             <div className={z.discription}>
                 <div>
                     <b>Name:     Tariel</b>
